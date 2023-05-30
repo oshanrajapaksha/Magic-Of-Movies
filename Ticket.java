@@ -3,50 +3,71 @@ package jv;
 
 public class Ticket {//mage
     private int id;
-    private String seatNum;
-    private String email;   
-    private int movId;
-    private String paymentStats;
+    private int mid;
+    private String date;
+    private int noTicket;
+    private String email;
+    private double total;
 
-    public int getId() {
-        return id;
+    public String getDate() {
+        return date;
     }
 
-    public String getSeatNum() {
-        return seatNum;
+    public void setDate(String date) {
+        this.date = date;
+    }
+    
+    
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+    
+
+    public int getNoTicket() {
+        return noTicket;
+    }
+
+    public void setNoTicket(int noTicket) {
+        this.noTicket = noTicket;
+    }
+    
+
+    public int getMid() {
+        return mid;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public int getMovId() {
-        return movId;
-    }
+   
+   
 
-    public String getPaymentStats() {
-        return paymentStats;
+    public void setMid(int id) {
+        this.mid = id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setSeatNum(String seatNum) {
-        this.seatNum = seatNum;
+    public int getId() {
+        return id;
     }
+
+    
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public void setMovId(int movId) {
-        this.movId = movId;
-    }
 
-    public void setPaymentStats(String paymentStats) {
-        this.paymentStats = paymentStats;
-    }
+   
     
     
 }

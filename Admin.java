@@ -1,6 +1,7 @@
 package jv;
 import DatAcc.MovieDataAccess;
-import java.sql.Date;
+import DatAcc.UserDatAcc;
+
 
 public class Admin extends User{
     public String userRole;
@@ -9,18 +10,10 @@ public class Admin extends User{
         super();
     }
 
-    public Admin(String email, String name, Date dob, String address, String password, String profPic) {
-        super(email, name, dob, address, password, profPic);
+    public Admin(String email, String name, String dob, String address, String password, String profPic,String role, String adMsg) {
+        super(email, name, dob, address, password, profPic, role, adMsg);
     }
 
-    public String getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(String userRole){
-        this.userRole = userRole;
-    }
-    
     public int insertNewMovieDetails(Movies movie) {
                 int numRows;
 		MovieDataAccess movieDat = new MovieDataAccess();
@@ -39,6 +32,16 @@ public class Admin extends User{
         int numRows;
         MovieDataAccess movieDat = new MovieDataAccess();
         numRows = movieDat.deleteMoviesRecord(movie);
+        return numRows;
+    }
+    
+    public int makeAdmin(String uEmail){
+        int numRows;
+        
+        UserDatAcc data = new UserDatAcc();
+        
+        numRows = data.upgradeUserToAnAdmin(uEmail);
+        
         return numRows;
     }
 }

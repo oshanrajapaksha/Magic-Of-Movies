@@ -1,30 +1,41 @@
 
 package jv;
 
-import java.sql.Date;
-
 
 public class User {
     
     private String email;
     private String name;
-    private Date dob;
+    private String dob;
     private String address;
     private String password;
     private String profPic;
     private String role;
+    private String adMsg;
     
     public User(){
     }
-    public User(String email, String name, Date dob, String address, String password, String profPic){
+    public User(String email, String name, String dob, String address, String password, String profPic, String role, String adMsg){
         this.name = name;
         this.dob = dob;
         this.email = email;
         this.address = address;
         this.password = password;
+        this.profPic = profPic;
         this.role = role;
+        this.adMsg = adMsg;
     }
 
+    public String getAdMsg() {
+        return adMsg;
+    }
+
+    public void setAdMsg(String adMsg) {
+        this.adMsg = adMsg;
+    }
+
+    
+    
     public void setEmail(String email) {
         this.email = email;
     }
@@ -33,7 +44,7 @@ public class User {
         this.name = name;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
@@ -61,7 +72,7 @@ public class User {
         return name;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
